@@ -59,6 +59,7 @@
     </style>
 </head>
     <CENTER><head> <h1><B><a href='index.php'>國立台北大學法案公告</a></B></h1> </head></CENTER>
+    <br><br>
     <?php
 	$page = 1;
 	if(isset($_GET["page"])){
@@ -67,6 +68,8 @@
 	
 	
     ?>
+    <CENTER>
+    <div style="border-width: 3px; border-style:solid ; width: auto;  border-color: rgb(0, 0, 0); padding: 5px; max-width: 80%;"><article-content>
     <?php
 	$numberPerPage = 10;
 	require_once "conn.php";
@@ -82,7 +85,7 @@
 	$counter = 0;
 	for ($i = $numberPerPage*($page-1); $i < ($numberPerPage*($page-1) + $numberPerPage) && $i < $num; $i++ ) {	
     ?>
-		<CENTER><a href='text.php?No=<?php echo $stack[$i]['No']; ?>' class="button" name="No" title="<?php echo $stack[$i]['Title']; ?>"><LEFT> <?php echo $stack[$i]['Title']; ?></LEFT><br></a></CENTER>
+		<CENTER><a href='text.php?No=<?php echo $stack[$i]['No']; ?>' class="button" name="No" title="<?php echo $stack[$i]['Title']; ?>"><LEFT> <?php echo $stack[$i]['Title']; ?></LEFT><br></a></CENTER><br>
     <?php
 	$counter++;
 	}
@@ -90,6 +93,9 @@
     ?>
 	<CENTER><h2><B><a>抱歉，找不到該網頁。</a></B></h2></CENTER>
     <?php }?>
+    </article-content>
+    </div>
+    </CENTER>
     <br><br><br><br><CENTER>頁面:<select onchange="javascript:location.href=this.value;" selected="selected" >
 	<option value="" selected disabled hidden><?php echo $page;?></option>
     <?php
