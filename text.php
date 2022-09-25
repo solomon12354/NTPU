@@ -62,7 +62,7 @@
     }
     </style>
 </head>
-<CENTER><head> <h1><B><a href='index.php'>國立台北大學法案公告</a></B></h1> </head></CENTER>
+<CENTER><head> <h1><B><a href='index.php' position='absolute'>國立台北大學法案公告</a></B></h1> </head></CENTER><br><br>
 <?php
 	require_once "conn.php";
 	$law = $_GET['No'];
@@ -85,7 +85,7 @@
     <CENTER><head> <h1><B><myTitle><?php echo $row['Title'];?></B></myTitle></h1> </head></CENTER>
     <CENTER><head> <h2>發布日期:<?php echo $row['Date'];?></h2> </head></CENTER>
     <CENTER>
-    <div style="border-width: 3px; border-style:solid ; width: 1200px;  border-color: rgb(255, 172, 85); padding: 5px; "><article-content>
+    <div style="border-width: 3px; border-style:solid ; width: auto;  border-color: rgb(255, 172, 85); padding: 5px; max-width: 80%;"><article-content>
     <?php
 	echo tab2space(nl2br($row['Text']));
     ?>
