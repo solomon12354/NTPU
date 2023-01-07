@@ -70,7 +70,7 @@
 	
 	if(!empty($_SESSION)){
 		$number = $result->num_rows;
-		$insert = "INSERT INTO law_text VALUES (" . $number . ", '" . $_SESSION["date"] . "' ," . $_SESSION["Lawname"] . ",\"" . $_SESSION["context"] . "\")";
+		$insert = "INSERT INTO law_text VALUES (" . $number . ", '" . $_SESSION["date"] . "' ,'" . $_SESSION["Lawname"] . "',\"" . $_SESSION["context"] . "\")";
 		echo $insert;
 		mysqli_query($conn,$insert);
 	}
